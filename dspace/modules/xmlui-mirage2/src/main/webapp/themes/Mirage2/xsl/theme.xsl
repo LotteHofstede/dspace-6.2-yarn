@@ -51,6 +51,7 @@
 
     <xsl:import href="custom/core/page-structure.xsl"/>
     <xsl:import href="custom/aspect/discovery/discovery.xsl"/>
+    <xsl:import href="custom/aspect/artifactbrowser/item-view.xsl"/>
 
     <xsl:output indent="yes"/>
 

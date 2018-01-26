@@ -68,9 +68,7 @@
 
                             </div>
 
-                            <div class="container">
-                                <xsl:call-template name="buildFooter"/>
-                            </div>
+                            <xsl:call-template name="buildFooter"/>
 
                         </xsl:otherwise>
                     </xsl:choose>
@@ -90,43 +88,41 @@
 
     <xsl:template name="buildFooter">
         <footer>
-            <div class="row">
+            <div class="container">
                 <hr/>
-                <div class="col-12 col-xs-12 col-sm-12">
-                    <div>
-                        <a href="http://www.dspace.org/" target="_blank">DSpace software</a> copyright&#160;&#169;&#160;2002-2016&#160; <a href="http://www.duraspace.org/" target="_blank">DuraSpace</a>
-                    </div>
-                    <div class="hidden-print">
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:value-of
-                                        select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                                <xsl:text>/contact</xsl:text>
-                            </xsl:attribute>
-                            <i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>
-                        </a>
-                        <xsl:text> | </xsl:text>
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:value-of
-                                        select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                                <xsl:text>/feedback</xsl:text>
-                            </xsl:attribute>
-                            <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
-                        </a>
-                    </div>
+                <div>
+                    <a href="http://www.dspace.org/" target="_blank">DSpace software</a> copyright&#160;&#169;&#160;2002-2016&#160; <a href="http://www.duraspace.org/" target="_blank">DuraSpace</a>
                 </div>
+                <div class="hidden-print">
+                    <a>
+                        <xsl:attribute name="href">
+                            <xsl:value-of
+                                    select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                            <xsl:text>/contact</xsl:text>
+                        </xsl:attribute>
+                        <i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>
+                    </a>
+                    <xsl:text> | </xsl:text>
+                    <a>
+                        <xsl:attribute name="href">
+                            <xsl:value-of
+                                    select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                            <xsl:text>/feedback</xsl:text>
+                        </xsl:attribute>
+                        <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
+                    </a>
+                </div>
+                <!--Invisible link to HTML sitemap (for search engines) -->
+                <a class="hidden">
+                    <xsl:attribute name="href">
+                        <xsl:value-of
+                                select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                        <xsl:text>/htmlmap</xsl:text>
+                    </xsl:attribute>
+                    <xsl:text>&#160;</xsl:text>
+                </a>
+                <p>&#160;</p>
             </div>
-            <!--Invisible link to HTML sitemap (for search engines) -->
-            <a class="hidden">
-                <xsl:attribute name="href">
-                    <xsl:value-of
-                            select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                    <xsl:text>/htmlmap</xsl:text>
-                </xsl:attribute>
-                <xsl:text>&#160;</xsl:text>
-            </a>
-            <p>&#160;</p>
         </footer>
     </xsl:template>
 
